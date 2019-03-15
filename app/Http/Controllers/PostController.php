@@ -45,6 +45,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'text' => 'required',
+            'author' => 'required',
+        ]);
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->text = $request->input('text');
@@ -99,6 +106,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'text' => 'required',
+            'author' => 'required',
+        ]);
+
         $post = Post::find($id);
         if (isset($post)) {
             $post->title = $request->input('title');
