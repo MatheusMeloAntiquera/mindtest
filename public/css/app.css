@@ -13708,3 +13708,22 @@ a.text-dark:focus {
   clip: auto;
 }
 
+.post {
+  margin: 20px;
+  box-shadow: 10px 10px 5px 0px #d6d6d6;
+}
+
+.card.mb-3 {
+  padding: 10px;
+}
+
+.buttons-right-top {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+

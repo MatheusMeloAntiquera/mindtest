@@ -15,7 +15,5 @@ Route::get('/', function () {
     return redirect()->route('post');
 });
 
-Route::resource('post', 'PostController')->names([
-    '/' => 'post',
-]);
+Route::resource('post', 'PostController');
 

@@ -9,3 +9,24 @@
 @import '~bootstrap/scss/bootstrap';
 
 @import "node_modules/font-awesome/scss/font-awesome.scss";
+
+.post {
+  margin: 20px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(214, 214, 214, 1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(214, 214, 214, 1);
+  box-shadow: 10px 10px 5px 0px rgba(214, 214, 214, 1);
+}
+
+.card.mb-3 {
+  padding: 10px;
+}
+
+.buttons-right-top {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+nav {
+  margin-bottom: 20px;
+}

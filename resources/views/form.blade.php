@@ -7,7 +7,8 @@
         <h2>New Post</h2>
     </div>
     <div class="card-body">
-        <form>
+        <form action="/post" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Enter post title">

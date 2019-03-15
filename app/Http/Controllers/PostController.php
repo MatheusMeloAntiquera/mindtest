@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::orderBy('id', 'DESC')->get();
         return view('home', compact('posts'));
     }
 
@@ -36,7 +37,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->text = $request->input('text');
+        $post->author = $request->input('author');
+
+        $post->save();
+
+        return redirect('post');
+
     }
 
     /**

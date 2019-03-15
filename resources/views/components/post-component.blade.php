@@ -7,13 +7,13 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h4 class="card-title">
                         {{ $post->title }}
-                        <span class="buttons-right">
-                <a href="#" role="button" class="btn btn-warning"><i class="fa fa-pencil-square-o fa-lg"></i>Edit</a>
-                <a href="#" role="button" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
-              </span>
-                    </h5>
+                        <span class="buttons-right-top">
+                            <a href="#" role="button" class="btn btn-warning"><i class="fa fa-pencil-square-o fa-lg"></i>Edit</a>
+                            <a href="#" role="button" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
+                        </span>
+                    </h4>
                     <p class="card-text">{{ $post->text }}</p>
                     <p class="card-text">
                         {{-- <small class="text-muted">Last updated 3 mins ago</small> --}}
