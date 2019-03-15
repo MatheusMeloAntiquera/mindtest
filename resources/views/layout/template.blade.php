@@ -13,7 +13,7 @@
 <body>
     <div>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="post">Blog Mind</a>
+            <a class="navbar-brand" href="/">Blog Mind</a>
         </nav>
         <div class="container">
             @yield('content')

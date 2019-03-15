@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return redirect()->route('post');
+    return redirect()->route('post.index');
 });
 
 Route::resource('post', 'PostController');

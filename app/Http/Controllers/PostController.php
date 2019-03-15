@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -26,7 +26,15 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('form');
+        $action = '/post';
+        $titleForm = 'New Post';
+
+        $param = [
+            'action' => '/post',
+            'titleForm' => 'New Post',
+        ];
+
+        return view('form', compact(['param']));
     }
 
     /**
@@ -56,7 +64,6 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return 'ddddddddddd';
 
     }
 
@@ -68,7 +75,19 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        $param = [
+            'method' => 'PUT',
+            'action' => "/post/" . $id,
+            'titleForm' => 'Edit Post',
+        ];
+
+        if (isset($post)) {
+            return view('form', compact(['post', 'param']));
+        }
+
+        return redirect('post');
     }
 
     /**
@@ -80,7 +99,17 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        if (isset($post)) {
+            $post->title = $request->input('title');
+            $post->text = $request->input('text');
+            $post->author = $request->input('author');
+
+            $post->save();
+        }
+
+        return redirect('post');
+
     }
 
     /**
@@ -91,6 +120,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        if ($post) {
+            $post->delete();
+        }
+
+        return redirect('post');
+
     }
 }
